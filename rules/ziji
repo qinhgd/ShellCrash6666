@@ -1,0 +1,20 @@
+# 直连列表
+DOMAIN-SUFFIX,hexin.cn
+DOMAIN-SUFFIX,10jqka.com.cn
+DOMAIN-SUFFIX,u.thsi.cn
+DOMAIN-SUFFIX,linux.do
+DOMAIN-SUFFIX,argotunnel.com
+DOMAIN-SUFFIX,sentry.io
+DOMAIN-SUFFIX,touzime.com
+DOMAIN-SUFFIX,hxkba.com
+DOMAIN-SUFFIX,cftunnel.com
+DOMAIN-SUFFIX,tailscale.com
+DOMAIN-SUFFIX,lifesizecloud.com
+DOMAIN-SUFFIX,cloudflare.com
+DOMAIN-SUFFIX,easytier.top
+DOMAIN-SUFFIX,twilio.com
+DOMAIN-SUFFIX,lcf.icu
+port,7844
+port,6288
+port,3478
+port,2333
