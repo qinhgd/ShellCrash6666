@@ -14,4 +14,6 @@ DOMAIN-SUFFIX,cloudflare.com
 DOMAIN-SUFFIX,easytier.top
 DOMAIN-SUFFIX,twilio.com
 DOMAIN-SUFFIX,lcf.icu
+IP-CIDR,198.41.0.0/24,no-resolve
+IP-CIDR,119.13.108.115/24,no-resolve
 
