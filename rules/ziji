@@ -14,7 +14,4 @@ DOMAIN-SUFFIX,cloudflare.com
 DOMAIN-SUFFIX,easytier.top
 DOMAIN-SUFFIX,twilio.com
 DOMAIN-SUFFIX,lcf.icu
-source_port,7844
-source_port,6288
-source_port,3478
-source_port,2333
+
