@@ -9,7 +9,6 @@ DOMAIN,bard.google.com
 DOMAIN,ai.google.dev
 DOMAIN,gemini.google.com
 DOMAIN-SUFFIX,googleapis.com
-DOMAIN-SUFFIX,sentry.io
 DOMAIN-SUFFIX,intercom.io
 DOMAIN-SUFFIX,featuregates.org
 DOMAIN-SUFFIX,statsigapi.net
