@@ -1,5 +1,5 @@
 [custom]
-ruleset=🎯 全球直连,https://raw.githubusercontent.com/qinhgd/ShellCrash6666/refs/heads/dev/rules/ziji
+ruleset=🎯 全球直连,https://raw.githubusercontent.com/qinhgd/ShellCrash6666/refs/heads/dev/rules/ziji.list
 ruleset=🎯 全球直连,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/LocalAreaNetwork.list
 ruleset=🛑 广告拦截,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanAD.list
 ruleset=🛑 广告拦截,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanProgramAD.list
