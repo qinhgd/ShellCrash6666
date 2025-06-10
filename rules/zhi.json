@@ -1,44 +1,126 @@
-# DOMAIN-SUFFIX 规则
-DOMAIN-SUFFIX,hexin.cn
-DOMAIN-SUFFIX,10jqka.com.cn
-DOMAIN-SUFFIX,u.thsi.cn
-DOMAIN-SUFFIX,linux.do
-DOMAIN-SUFFIX,argotunnel.com
-DOMAIN-SUFFIX,sentry.io
-DOMAIN-SUFFIX,touzime.com
-DOMAIN-SUFFIX,hxkba.com
-DOMAIN-SUFFIX,cftunnel.com
-DOMAIN-SUFFIX,tailscale.com
-DOMAIN-SUFFIX,lifesizecloud.com
-DOMAIN-SUFFIX,cloudflare.com
-DOMAIN-SUFFIX,easytier.top
-DOMAIN-SUFFIX,twilio.com
-DOMAIN-SUFFIX,sg-1.lcf.im
-DOMAIN-SUFFIX,tw-taipei-1.lcf.im
-DOMAIN-SUFFIX,cloudns.ph
-DOMAIN-SUFFIX,minebg.top
-DOMAIN-SUFFIX,soe.icu
-DOMAIN-SUFFIX,9z1.me
-DOMAIN-SUFFIX,easytier.top
-DOMAIN-SUFFIX,629957.xyz
-DOMAIN-SUFFIX,clickor.click
-DOMAIN-SUFFIX,993555.xyz
-DOMAIN-SUFFIX,ze5.net
-DOMAIN-SUFFIX,minebg.top
-DOMAIN-SUFFIX,ie12vps.xyz
-DOMAIN-SUFFIX,01130328.xyz
+[
+  {
+    "domain_suffix": "hexin.cn"
+  },
+  {
+    "domain_suffix": "10jqka.com.cn"
+  },
+  {
+    "domain_suffix": "u.thsi.cn"
+  },
+  {
+    "domain_suffix": "linux.do"
+  },
+  {
+    "domain_suffix": "argotunnel.com"
+  },
+  {
+    "domain_suffix": "sentry.io"
+  },
+  {
+    "domain_suffix": "touzime.com"
+  },
+  {
+    "domain_suffix": "hxkba.com"
+  },
+  {
+    "domain_suffix": "cftunnel.com"
+  },
+  {
+    "domain_suffix": "tailscale.com"
+  },
+  {
+    "domain_suffix": "lifesizecloud.com"
+  },
+  {
+    "domain_suffix": "cloudflare.com"
+  },
+  {
+    "domain_suffix": "easytier.top"
+  },
+  {
+    "domain_suffix": "twilio.com"
+  },
+  {
+    "domain_suffix": "sg-1.lcf.im"
+  },
+  {
+    "domain_suffix": "tw-taipei-1.lcf.im"
+  },
+  {
+    "domain_suffix": "cloudns.ph"
+  },
+  {
+    "domain_suffix": "minebg.top"
+  },
+  {
+    "domain_suffix": "soe.icu"
+  },
+  {
+    "domain_suffix": "9z1.me"
+  },
+  {
+    "domain_suffix": "easytier.top"
+  },
+  {
+    "domain_suffix": "629957.xyz"
+  },
+  {
+    "domain_suffix": "clickor.click"
+  },
+  {
+    "domain_suffix": "993555.xyz"
+  },
+  {
+    "domain_suffix": "ze5.net"
+  },
+  {
+    "domain_suffix": "minebg.top"
+  },
+  {
+    "domain_suffix": "ie12vps.xyz"
+  },
+  {
+    "domain_suffix": "01130328.xyz"
+  },
 
-# IP-CIDR 规则
-IP-CIDR,119.13.108.0/24
-IP-CIDR,141.11.91.0/24
-IP-CIDR,116.206.178.0/24
-IP-CIDR,192.73.244.0/24
-IP-CIDR,154.16.183.0/24
-IP-CIDR,198.41.192.0/24
-IP-CIDR,198.41.200.0/24
-IP-CIDR,103.194.107.246/32
-IP-CIDR,39.108.52.138/32
-IP-CIDR,96.9.229.212/32
-IP-CIDR,8.138.6.53/32
-IP-CIDR,47.103.35.100/32
-IP-CIDR,116.206.178.250/32
+  {
+    "ip_cidr": "119.13.108.0/24"
+  },
+  {
+    "ip_cidr": "141.11.91.0/24"
+  },
+  {
+    "ip_cidr": "116.206.178.0/24"
+  },
+  {
+    "ip_cidr": "192.73.244.0/24"
+  },
+  {
+    "ip_cidr": "154.16.183.0/24"
+  },
+  {
+    "ip_cidr": "198.41.192.0/24"
+  },
+  {
+    "ip_cidr": "198.41.200.0/24"
+  },
+  {
+    "ip_cidr": "103.194.107.246/32"
+  },
+  {
+    "ip_cidr": "39.108.52.138/32"
+  },
+  {
+    "ip_cidr": "96.9.229.212/32"
+  },
+  {
+    "ip_cidr": "8.138.6.53/32"
+  },
+  {
+    "ip_cidr": "47.103.35.100/32"
+  },
+  {
+    "ip_cidr": "116.206.178.250/32"
+  }
+]
