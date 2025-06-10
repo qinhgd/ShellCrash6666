@@ -1,0 +1,187 @@
+{
+  "outbound_providers": [
+    {
+      "tag": "🛫 机场订阅",
+      "type": "remote",
+      // 修改为你的 Clash 订阅链接
+      "download_url": "https://example.com/xxx/xxx&flag=clash",
+      "path": "./providers/airport.yaml",
+      "download_interval": "24h",
+      "download_ua": "clash.meta",
+      "includes": [ "(?i)(🇭🇰|港|hk|hongkong|hong kong|🇹🇼|台|tw|taiwan|tai wan|🇯🇵|日|jp|japan|🇸🇬|新|sg|singapore|🇺🇸|美|us|unitedstates|united states)" ],
+      "healthcheck_url": "https://www.gstatic.com/generate_204",
+      "healthcheck_interval": "10m"
+    },
+    {
+      "tag": "🆓 免费订阅",
+      "type": "remote",
+      // 修改为你的 sing-box 订阅链接
+      "download_url": "https://example.com/xxx/xxx",
+      "path": "./providers/free.json",
+      "download_interval": "24h",
+      "download_ua": "sing-box",
+      "healthcheck_url": "https://www.gstatic.com/generate_204",
+      "healthcheck_interval": "10m"
+    }
+  ],
+  "outbounds": [
+    { "tag": "🚀 节点选择", "type": "selector", "outbounds": [ "🇭🇰 香港节点", "🇹🇼 台湾节点", "🇯🇵 日本节点", "🇸🇬 新加坡节点", "🇺🇸 美国节点", "🆓 免费节点", "🆚 vless 节点" ] },
+    { "tag": "📈 网络测试", "type": "selector", "outbounds": [ "🎯 全球直连", "🚀 节点选择", "🇭🇰 香港节点", "🇹🇼 台湾节点", "🇯🇵 日本节点", "🇸🇬 新加坡节点", "🇺🇸 美国节点", "🆓 免费节点", "🆚 vless 节点" ] },
+    { "tag": "🤖 人工智能", "type": "selector", "outbounds": [ "🚀 节点选择", "🇭🇰 香港节点", "🇹🇼 台湾节点", "🇯🇵 日本节点", "🇸🇬 新加坡节点", "🇺🇸 美国节点", "🆓 免费节点", "🆚 vless 节点" ] },
+    { "tag": "📋 Trackerslist", "type": "selector", "outbounds": [ "🎯 全球直连", "🚀 节点选择" ] },
+    { "tag": "🎮 游戏服务", "type": "selector", "outbounds": [ "🎯 全球直连", "🚀 节点选择" ] },
+    { "tag": "🪟 微软服务", "type": "selector", "outbounds": [ "🎯 全球直连", "🚀 节点选择" ] },
+    { "tag": "🇬 谷歌服务", "type": "selector", "outbounds": [ "🎯 全球直连", "🚀 节点选择" ] },
+    { "tag": "🍎 苹果服务", "type": "selector", "outbounds": [ "🎯 全球直连", "🚀 节点选择" ] },
+    { "tag": "🛡️ 直连域名", "type": "selector", "outbounds": [ "🎯 全球直连", "🚀 节点选择" ] },
+    { "tag": "🀄️ 直连 IP", "type": "selector", "outbounds": [ "🎯 全球直连", "🚀 节点选择" ] },
+    { "tag": "🧱 代理域名", "type": "selector", "outbounds": [ "🚀 节点选择", "🎯 全球直连" ] },
+    { "tag": "📲 电报消息", "type": "selector", "outbounds": [ "🚀 节点选择", "🇭🇰 香港节点", "🇹🇼 台湾节点", "🇯🇵 日本节点", "🇰🇷 韩国节点", "🇸🇬 新加坡节点", "🇺🇸 美国节点", "🆓 免费节点", "🆚 vless 节点" ] },
+    { "tag": "🐟 漏网之鱼", "type": "selector", "outbounds": [ "🚀 节点选择", "🇭🇰 香港节点", "🇹🇼 台湾节点", "🇯🇵 日本节点", "🇰🇷 韩国节点", "🇸🇬 新加坡节点", "🇺🇸 美国节点", "🆓 免费节点", "🆚 vless 节点", "🎯 全球直连" ] },
+    { "tag": "🎯 全球直连", "type": "selector", "outbounds": [ "DIRECT" ] },
+    { "tag": "DIRECT", "type": "direct" },
+    { "tag": "GLOBAL", "type": "selector", "outbounds": [ "DIRECT", "🇭🇰 香港节点", "🇹🇼 台湾节点", "🇯🇵 日本节点", "🇸🇬 新加坡节点", "🇺🇸 美国节点", "🆓 免费节点", "🆚 vless 节点" ] },
+    { "tag": "dns-out", "type": "dns" },
+    // 若没有单个出站节点，须删除所有 `🆚 vless 节点` 相关内容
+    {
+      "tag": "🆚 vless 节点",
+      "type": "vless",
+      "server": "example.com",
+      "server_port": 443,
+      "uuid": "{uuid}",
+      "network": "tcp",
+      "tls": { "enabled": true, "server_name": "example.com", "insecure": false },
+      "transport": { "type": "ws", "path": "/?ed=2048", "headers": { "Host": "example.com" } }
+    },
+
+    { "tag": "🇭🇰 香港节点", "type": "urltest", "tolerance": 50, "providers": [ "🛫 机场订阅" ], "includes": [ "(?i)(🇭🇰|港|hk|hongkong|hong kong)" ] },
+    { "tag": "🇹🇼 台湾节点", "type": "urltest", "tolerance": 50, "providers": [ "🛫 机场订阅" ], "includes": [ "(?i)(🇹🇼|台|tw|taiwan|tai wan)" ] },
+    { "tag": "🇯🇵 日本节点", "type": "urltest", "tolerance": 50, "providers": [ "🛫 机场订阅" ], "includes": [ "(?i)(🇯🇵|日|jp|japan)" ] },
+    { "tag": "🇸🇬 新加坡节点", "type": "urltest", "tolerance": 50, "providers": [ "🛫 机场订阅" ], "includes": [ "(?i)(🇸🇬|新|sg|singapore)" ] },
+    { "tag": "🇺🇸 美国节点", "type": "urltest", "tolerance": 50, "providers": [ "🛫 机场订阅" ], "includes": [ "(?i)(🇺🇸|美|us|unitedstates|united states)" ] },
+    { "tag": "🆓 免费节点", "type": "urltest", "tolerance": 100, "providers": [ "🆓 免费订阅" ] }
+  ],
+  "route": {
+    "rules": [
+      { "protocol": [ "dns" ], "outbound": "dns-out" },
+      { "clash_mode": [ "Direct" ], "outbound": "DIRECT" },
+      { "clash_mode": [ "Global" ], "outbound": "GLOBAL" },
+      { "rule_set": [ "private" ], "outbound": "🎯 全球直连" },
+      { "rule_set": [ "trackerslist" ], "outbound": "📋 Trackerslist" },
+      { "rule_set": [ "microsoft-cn" ], "outbound": "🪟 微软服务" },
+      { "rule_set": [ "apple-cn" ], "outbound": "🍎 苹果服务" },
+      { "rule_set": [ "google-cn" ], "outbound": "🇬 谷歌服务" },
+      { "rule_set": [ "games-cn" ], "outbound": "🎮 游戏服务" },
+      { "rule_set": [ "ai" ], "outbound": "🤖 人工智能" },
+      { "rule_set": [ "networktest" ], "outbound": "📈 网络测试" },
+      { "rule_set": [ "proxy" ], "outbound": "🧱 代理域名" },
+      { "rule_set": [ "cn" ], "outbound": "🛡️ 直连域名" },
+      { "rule_set": [ "privateip" ], "outbound": "🎯 全球直连", "skip_resolve": true },
+      { "rule_set": [ "cnip" ], "outbound": "🀄️ 直连 IP" },
+      { "rule_set": [ "telegramip" ], "outbound": "📲 电报消息", "skip_resolve": true }
+    ],
+    "rule_set": [
+      {
+        "tag": "fakeip-filter",
+        "type": "remote",
+        "format": "binary",
+        "path": "./ruleset/fakeip-filter.srs",
+        "url": "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/fakeip-filter-lite.srs"
+      },
+      {
+        "tag": "private",
+        "type": "remote",
+        "format": "binary",
+        "path": "./ruleset/private.srs",
+        "url": "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/private.srs"
+      },
+      {
+        "tag": "trackerslist",
+        "type": "remote",
+        "format": "binary",
+        "path": "./ruleset/trackerslist.srs",
+        "url": "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.srs"
+      },
+      {
+        "tag": "microsoft-cn",
+        "type": "remote",
+        "format": "binary",
+        "path": "./ruleset/microsoft-cn.srs",
+        "url": "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/microsoft-cn.srs"
+      },
+      {
+        "tag": "apple-cn",
+        "type": "remote",
+        "format": "binary",
+        "path": "./ruleset/apple-cn.srs",
+        "url": "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/apple-cn.srs"
+      },
+      {
+        "tag": "google-cn",
+        "type": "remote",
+        "format": "binary",
+        "path": "./ruleset/google-cn.srs",
+        "url": "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/google-cn.srs"
+      },
+      {
+        "tag": "games-cn",
+        "type": "remote",
+        "format": "binary",
+        "path": "./ruleset/games-cn.srs",
+        "url": "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/games-cn.srs"
+      },
+      {
+        "tag": "ai",
+        "type": "remote",
+        "format": "binary",
+        "path": "./ruleset/ai.srs",
+        "url": "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/ai.srs"
+      },
+      {
+        "tag": "networktest",
+        "type": "remote",
+        "format": "binary",
+        "path": "./ruleset/networktest.srs",
+        "url": "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/networktest.srs"
+      },
+      {
+        "tag": "proxy",
+        "type": "remote",
+        "format": "binary",
+        "path": "./ruleset/proxy.srs",
+        "url": "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/proxy.srs"
+      },
+      {
+        "tag": "cn",
+        "type": "remote",
+        "format": "binary",
+        "path": "./ruleset/cn.srs",
+        "url": "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/cn-lite.srs"
+      },
+      {
+        "tag": "privateip",
+        "type": "remote",
+        "format": "binary",
+        "path": "./ruleset/privateip.srs",
+        "url": "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/privateip.srs"
+      },
+      {
+        "tag": "cnip",
+        "type": "remote",
+        "format": "binary",
+        "path": "./ruleset/cnip.srs",
+        "url": "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/cnip.srs"
+      },
+      {
+        "tag": "telegramip",
+        "type": "remote",
+        "format": "binary",
+        "path": "./ruleset/telegramip.srs",
+        "url": "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/telegramip.srs"
+      }
+    ],
+    "final": "🐟 漏网之鱼",
+    "auto_detect_interface": true,
+    "concurrent_dial": true
+  }
+}
