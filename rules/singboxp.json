@@ -3,8 +3,7 @@
     {
       "tag": "🛫 机场订阅",
       "type": "remote",
-      // 修改为你的 Clash 订阅链接
-      "download_url": "https://example.com/xxx/xxx&flag=clash",
+      "download_url": "https://xtls.rprx.vision/api/v1/client/subscribe?token=26ea0fab7913a6d2755bcc0b63f64717",
       "path": "./providers/airport.yaml",
       "download_interval": "24h",
       "download_ua": "clash.meta",
@@ -15,8 +14,7 @@
     {
       "tag": "🆓 免费订阅",
       "type": "remote",
-      // 修改为你的 sing-box 订阅链接
-      "download_url": "https://example.com/xxx/xxx",
+      "download_url": "https://52pokemon.xz61.cn/api/v1/client/subscribe?token=d5c7236bfc4e6c85edd027394539e139",
       "path": "./providers/free.json",
       "download_interval": "24h",
       "download_ua": "sing-box",
@@ -42,18 +40,6 @@
     { "tag": "DIRECT", "type": "direct" },
     { "tag": "GLOBAL", "type": "selector", "outbounds": [ "DIRECT", "🇭🇰 香港节点", "🇹🇼 台湾节点", "🇯🇵 日本节点", "🇸🇬 新加坡节点", "🇺🇸 美国节点", "🆓 免费节点", "🆚 vless 节点" ] },
     { "tag": "dns-out", "type": "dns" },
-    // 若没有单个出站节点，须删除所有 `🆚 vless 节点` 相关内容
-    {
-      "tag": "🆚 vless 节点",
-      "type": "vless",
-      "server": "example.com",
-      "server_port": 443,
-      "uuid": "{uuid}",
-      "network": "tcp",
-      "tls": { "enabled": true, "server_name": "example.com", "insecure": false },
-      "transport": { "type": "ws", "path": "/?ed=2048", "headers": { "Host": "example.com" } }
-    },
-
     { "tag": "🇭🇰 香港节点", "type": "urltest", "tolerance": 50, "providers": [ "🛫 机场订阅" ], "includes": [ "(?i)(🇭🇰|港|hk|hongkong|hong kong)" ] },
     { "tag": "🇹🇼 台湾节点", "type": "urltest", "tolerance": 50, "providers": [ "🛫 机场订阅" ], "includes": [ "(?i)(🇹🇼|台|tw|taiwan|tai wan)" ] },
     { "tag": "🇯🇵 日本节点", "type": "urltest", "tolerance": 50, "providers": [ "🛫 机场订阅" ], "includes": [ "(?i)(🇯🇵|日|jp|japan)" ] },
@@ -88,6 +74,13 @@
         "path": "./ruleset/fakeip-filter.srs",
         "url": "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/fakeip-filter-lite.srs"
       },
+      {
+        "tag": "zhilian",
+        "type": "remote",
+        "format": "source",
+        "path": "./ruleset/zhi.json",
+        "url": "https://raw.githubusercontent.com/qinhgd/ShellCrash6666/refs/heads/dev/rules/zhi.json"
+      }
       {
         "tag": "private",
         "type": "remote",
