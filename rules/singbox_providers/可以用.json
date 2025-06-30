@@ -6,7 +6,7 @@
       "outbounds": [
         "宝可梦",
         "国际机场",
-        "3",
+        "sub本地",
         "本地",
         "🇭🇰 香港节点",
         "🇹🇼 台湾节点",
@@ -26,7 +26,7 @@
       "outbounds": [
         "宝可梦",
         "国际机场",
-        "3",
+        "sub本地",
         "本地",
         "🇭🇰 香港节点",
         "🇹🇼 台湾节点",
@@ -125,7 +125,7 @@
         "🇺🇸 美国节点",
         "宝可梦",
         "国际机场",
-        "3",
+        "sub本地",
         "本地",
         "🚀 手动切换"
       ]
@@ -143,7 +143,7 @@
         "🇺🇸 美国节点",
         "宝可梦",
         "国际机场",
-        "3",
+        "sub本地",
         "本地",
         "🚀 手动切换"
       ]
@@ -237,8 +237,8 @@
     },
     {
       "type": "urltest",
-      "tag": "3",
-      "providers": "3",
+      "tag": "sub本地",
+      "providers": "sub本地",
       "includes": ".*",
       "tolerance": 100
     },
@@ -447,8 +447,8 @@
     },
     {
       "type": "remote",
-      "path": "./providers/3.yaml",
-      "tag": "sub本机",
+      "path": "./providers/sub本地.yaml",
+      "tag": "sub本地",
       "download_url": "http://192.168.31.93:40232/2cXaAxRGfddmGz2yx1wA/download/collection/%E6%9C%AC%E6%9C%BA%E4%B8%93%E7%94%A8?target=ClashMeta",
       "download_ua": "clash.meta",
       "download_interval": "24h0m0s",
