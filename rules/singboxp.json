@@ -78,8 +78,8 @@
         "tag": "zhilian",
         "type": "remote",
         "format": "source",
-        "path": "./ruleset/zhi.json",
-        "url": "https://raw.githubusercontent.com/qinhgd/ShellCrash6666/refs/heads/dev/rules/zhi.json"
+        "path": "./ruleset/zhi.srs",
+        "url": "https://github.com/qinhgd/ShellCrash6666/raw/refs/heads/dev/zhi.srs"
       }
       {
         "tag": "private",
