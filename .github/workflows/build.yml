@@ -1,0 +1,38 @@
+name: Compile Ruleset
+
+on:
+  push:
+    paths:
+      - 'rules_src/**'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install sing-box
+        run: |
+          curl -Lo sing-box.tar.gz https://github.com/SagerNet/sing-box/releases/download/v1.8.5/sing-box-1.8.5-linux-amd64.tar.gz
+          tar -xvf sing-box.tar.gz
+          mv sing-box-*/sing-box .
+
+      - name: Create ruleset directory
+        run: mkdir -p ruleset
+
+      - name: Compile Direct Rules
+        run: ./sing-box rule-set compile rules_src/my_direct.json -o ruleset/my_direct.srs
+
+      - name: Compile Proxy Rules
+        run: ./sing-box rule-set compile rules_src/my_proxy.json -o ruleset/my_proxy.srs
+
+      - name: Push Compiled Rules
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add ruleset/*.srs
+          git commit -m "Update ruleset" || exit 0
+          git push
