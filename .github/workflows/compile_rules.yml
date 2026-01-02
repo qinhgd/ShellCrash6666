@@ -1,0 +1,33 @@
+name: Compile My Rules
+on:
+  push:
+    paths:
+      - 'rules_src/**' # 只有当你修改 rules_src 目录下的文件时才触发
+  workflow_dispatch: # 允许手动点击运行
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install sing-box
+        run: |
+          curl -Lo sing-box.tar.gz https://github.com/SagerNet/sing-box/releases/download/v1.8.5/sing-box-1.8.5-linux-amd64.tar.gz
+          tar -xvf sing-box.tar.gz
+          mv sing-box-*/sing-box .
+
+      - name: Compile Direct Rules
+        run: ./sing-box rule-set compile rules_src/my_direct.json -o my_direct.srs
+
+      - name: Compile Proxy Rules
+        run: ./sing-box rule-set compile rules_src/my_proxy.json -o my_proxy.srs
+
+      - name: Push Compiled Rules
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add *.srs
+          git commit -m "Update binary rulesets" || exit 0
+          git push
