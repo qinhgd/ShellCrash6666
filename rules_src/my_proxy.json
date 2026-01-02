@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain": [
+        "google.com",
+        "github.com"
+      ]
+    }
+  ]
+}
