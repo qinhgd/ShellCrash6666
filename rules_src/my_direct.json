@@ -4,7 +4,8 @@
     {
       "domain": [
         "domain1.com",
-        "domain2.cn"
+        "domain2.cn",
+        "consumer-masque.cloudflareclient.com"
       ],
       "domain_suffix": [
         ".aliyun.com"
