@@ -3,14 +3,11 @@
   "rules": [
     {
       "domain": [
-        "domain1.com",
-        "domain2.cn",
-        "consumer-masque.cloudflareclient.com",
-        "cftunnel.com",
-        "argotunnel.com"
+        "consumer-masque.cloudflareclient.com"
       ],
       "domain_suffix": [
-        "aliyun.com"
+        "cftunnel.com",
+        "argotunnel.com"
       ],
       "ip_cidr": [
         "162.159.198.2/32",
