@@ -6,7 +6,8 @@
 "domain1.com",
 "domain2.cn",
 "consumer-masque.cloudflareclient.com",
-"cftunnel.com"
+"cftunnel.com",
+"argotunnel.com"
 ],
 "domain_suffix": [
 ".aliyun.com"
